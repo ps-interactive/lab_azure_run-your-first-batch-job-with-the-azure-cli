@@ -26,7 +26,7 @@ module "key-vault" {
   azureml_random = random_string.random.result
   rg = module.resource_group.azurerm_resource_group_rg_name
   rg_loc = module.resource_group.azurerm_resource_group_rg_location
-  tenant = data.azurerm_client_config.current
+  tenant = data.azurerm_client_config.current.tenant_id
 }
 
 module "application_insights" {
@@ -43,7 +43,7 @@ module "machine-learning" {
   rg = module.resource_group.azurerm_resource_group_rg_name
   rg_loc = module.resource_group.azurerm_resource_group_rg_location
   storage_id = module.storage_account.azurerm_storage_account_storage_id
-  vault_id = module.key-vault.azurerm_application_insights_pluralsight_app_insights_id
+  vault_id = module.key-vault.azurerm_key_vault-pluralsight_vault_id
 }
 
 module "remote-executor" {

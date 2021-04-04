@@ -1,3 +1,3 @@
-output "azurerm_application_insights_pluralsight_app_insights_id" {
-  value = azurerm_key_vault
+output "azurerm_key_vault-pluralsight_vault_id" {
+  value = azurerm_key_vault.pluralsight-vault.id
 }
